@@ -1,0 +1,34 @@
+#include <iostream>
+#include <cmath>
+
+int main() {
+    int num1, num2, num3, num4;
+
+    // Input four integers from the user
+    std::cout << "Enter the first integer: ";
+    std::cin >> num1;
+
+    std::cout << "Enter the second integer: ";
+    std::cin >> num2;
+
+    std::cout << "Enter the third integer: ";
+    std::cin >> num3;
+
+    std::cout << "Enter the fourth integer: ";
+    std::cin >> num4;
+
+    // Calculate the mean
+    double mean = (static_cast<double>(num1 + num2 + num3 + num4)) / 4.0;
+
+    // Calculate the sum of squared differences from the mean
+    double sumSquaredDifferences = pow(num1 - mean, 2) + pow(num2 - mean, 2) + pow(num3 - mean, 2) + pow(num4 - mean, 2);
+
+    // Calculate the population standard deviation
+    double stdDeviation = sqrt(sumSquaredDifferences / 4.0);
+
+    // Output the results
+    std::cout << "Mean: " << mean << std::endl;
+    std::cout << "Population Standard Deviation: " << stdDeviation << std::endl;
+
+    return 0;
+}
